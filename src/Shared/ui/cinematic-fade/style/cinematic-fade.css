@@ -1,0 +1,15 @@
+.fade-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 50;
+    transition: opacity 3s ease-in-out; 
+    pointer-events: none;
+  }
+
+  .fade-overlay.hidden-overlay {
+    opacity: 0;
+  }
