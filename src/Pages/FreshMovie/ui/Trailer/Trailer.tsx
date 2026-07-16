@@ -22,15 +22,15 @@ function Trailer() {
     <div>
       <div className="video">
         <div className="video-container">
-          <CinematicFade />
-          <iframe
-            src={`https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=1&controls=0&cc_load_policy=0`}
-            title="Trailer"
-            allow="autoplay"
-            frameBorder="0"
-          />
-          <Info />
-        </div>
+  <CinematicFade />
+  <iframe
+  src={`https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=1&controls=0&modestbranding=1&loop=1&playlist=${videoKey}&fs=0&rel=0&iv_load_policy=3`}
+  title="Trailer"
+  allow="autoplay"
+  frameBorder="0"
+/>
+  <Info />
+</div>
       </div>
       <Movies />
     </div>

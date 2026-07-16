@@ -7,7 +7,7 @@ export default function CinematicFade() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 4300)
+    }, 300)
 
     return () => clearTimeout(timer);
   }, []);
