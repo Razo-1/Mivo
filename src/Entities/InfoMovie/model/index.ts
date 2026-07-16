@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { selectedInfoMovie } from "../infoMovieAPI";
+import type { info } from "../Types";
 
 export const infoMovieThunk = createAsyncThunk(
     'getInfoMovie',
@@ -9,7 +10,9 @@ export const infoMovieThunk = createAsyncThunk(
     }
 )
 
-const initialState : any = {}
+const initialState :  info = {
+    infoMovie : null
+}
 
 
 const infoMovieSlice = createSlice({
