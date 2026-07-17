@@ -1,8 +1,9 @@
-export interface IFilm {
+export interface IMovie {
     adult: boolean;
     backdrop_path: string | null;
     genre_ids: number[];
     id: number;
+    media_type: string;
     original_language: string;
     original_title: string;
     overview: string;
@@ -16,6 +17,6 @@ export interface IFilm {
     vote_count: number;
 }
 
-export interface IMovie {
-    release : IFilm[]
+export interface IListState<T> {
+    item: T[];
 }

@@ -1,6 +1,6 @@
 import { createAsyncThunk,createSlice } from "@reduxjs/toolkit";
 import { reals } from "../ReleasesAPI";
-import type { IMovie } from "../Types";
+import type { IListState,IMovie } from "../../../Shared/Types";
 
 export const relseThunk =  createAsyncThunk(
     'getRelease',
@@ -10,8 +10,8 @@ export const relseThunk =  createAsyncThunk(
     }
 )
 
-const initialState : IMovie = {
-    release : []
+const initialState  : IListState<IMovie> = {
+    item : []
 }
 
 const relseSlice = createSlice({
@@ -20,7 +20,7 @@ const relseSlice = createSlice({
     reducers : {},
     extraReducers(builder){
         builder.addCase(relseThunk.fulfilled,(state,action) => {
-            state.release = action.payload
+            state.item = action.payload
         })
     }
 })
