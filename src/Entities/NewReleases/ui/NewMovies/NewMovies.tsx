@@ -3,11 +3,11 @@ import { useAppSelector } from '../../../../App/Hooks';
 
 function NewMovies({  }){
     
-    const { item } = useAppSelector(state => state.releaseData)
+    const { results } = useAppSelector(state => state.releaseData)
     
     return(
         <>
-          <Films release={item} text={'Trending Now'}/>
+          <Films release={results} text={'Trending Now'}/>
         </>
       
     )

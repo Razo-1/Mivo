@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "../../../../App/Hooks";
 
 function Watch(){
 
-    const { item } = useAppSelector(state => state.watchData);
+    const { results } = useAppSelector(state => state.watchData);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -33,7 +33,7 @@ function Watch(){
         </Box>
 
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
-        {item.slice(0,10).map((movie, idx) => (
+        {results.slice(0,10).map((movie, idx) => (
           <Box 
             key={movie.id} 
             sx={{ 

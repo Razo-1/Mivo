@@ -1,8 +1,8 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { selectMovie } from "../MoviAPI";
 import type { IMovieVideoResponse } from "../Types";
 
-export const movieThunk = createAsyncThunk(
+export const movieThunk = createAsyncThunk<IMovieVideoResponse>(
     'getMovie',
     async () => {
        const movie = await selectMovie.getMovi()
@@ -19,7 +19,7 @@ const movieSlice = createSlice({
     initialState,
     reducers : {},
     extraReducers(builder){
-    builder.addCase(movieThunk.fulfilled,(state,action) => {
+    builder.addCase(movieThunk.fulfilled,(state,action : PayloadAction<IMovieVideoResponse>) => {
         state.id = action.payload.id;
         state.results = action.payload.results;
     })

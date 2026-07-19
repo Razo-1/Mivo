@@ -1,8 +1,8 @@
-import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice,createAsyncThunk, type PayloadAction } from "@reduxjs/toolkit";
 import type { IListState,IMovie } from "../../../Shared/Types";
 import { watch } from "../watchingAPI";
 
-export const watchThunk = createAsyncThunk(
+export const watchThunk = createAsyncThunk<Array<IMovie>>(
     'getWatch',
     async () => {
         const response = await watch.getWatching();
@@ -12,7 +12,7 @@ export const watchThunk = createAsyncThunk(
 
 
 const initialState : IListState<IMovie> = {
-    item : []
+    results : []
 }
 
 const watchSlice = createSlice({
@@ -20,8 +20,8 @@ const watchSlice = createSlice({
     initialState,
     reducers : {},
     extraReducers(builder){
-        builder.addCase(watchThunk.fulfilled,(state,action) => {
-            state.item = action.payload;
+        builder.addCase(watchThunk.fulfilled,(state,action : PayloadAction<Array<IMovie>>) => {
+            state.results = action.payload;
         })
     }
 })

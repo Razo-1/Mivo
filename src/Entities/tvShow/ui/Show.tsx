@@ -8,7 +8,6 @@ function Show(){
 
       const dispatch = useAppDispatch();
       const { show } = useAppSelector(state => state.showData);
-        console.log(show);
         
       useEffect(() => {
         dispatch(showThunk())

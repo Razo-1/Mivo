@@ -1,8 +1,9 @@
 import { ApiConfige } from "../../../Shared/ApiConfige";
+import type { IListState, IMovie } from "../../../Shared/Types";
 
 class ReleasesAPI extends ApiConfige {
     async getReleases(){
-        return await this.getApi().get('/movie/now_playing')
+        return await this.getApi().get<IListState<IMovie>>('/movie/now_playing')
     }
 }
 

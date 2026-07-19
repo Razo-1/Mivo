@@ -6,14 +6,14 @@ import { useAppDispatch, useAppSelector } from "../../../../App/Hooks";
 
 function InCinemas(){
     
-    const { item } = useAppSelector(state => state.cinemasData)
+    const { results } = useAppSelector(state => state.cinemasData)
     const dispatch = useAppDispatch()
 
     useEffect(() => {
         dispatch(cinamntThunk());
     },[dispatch])
 
-    let release = item    
+    let release = results    
     
     return(
         <>

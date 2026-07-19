@@ -1,8 +1,9 @@
 import { createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { show } from "../tvShowAPI";
+import type { IShowState, ITV } from "../types";
 
-export const showThunk = createAsyncThunk(
+export const showThunk = createAsyncThunk<Array<ITV>>(
     'getShow',
     async () => {
         const response = await show.getShow();
@@ -10,7 +11,7 @@ export const showThunk = createAsyncThunk(
     }
 )
 
-const initialState = {
+const initialState : IShowState = {
     show : [],
 }
 
@@ -19,7 +20,7 @@ const showSlice = createSlice({
     initialState,
     reducers : {},
     extraReducers(builder){
-        builder.addCase(showThunk.fulfilled,(state,action) =>{
+        builder.addCase(showThunk.fulfilled,(state,action : PayloadAction<Array<ITV>>) =>{
             state.show = action.payload
         })
     }

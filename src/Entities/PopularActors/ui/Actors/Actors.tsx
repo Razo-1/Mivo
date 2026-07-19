@@ -20,7 +20,8 @@ function Actors() {
     dispatch(actorThunk());
   }, [dispatch]);
 
-
+  console.log(actors);
+  
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Box

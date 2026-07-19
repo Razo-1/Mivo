@@ -1,8 +1,8 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { selectedInfoMovie } from "../infoMovieAPI";
-import type { info } from "../Types";
+import type { IMovieInfo, info } from "../Types";
 
-export const infoMovieThunk = createAsyncThunk(
+export const infoMovieThunk = createAsyncThunk<IMovieInfo>(
     'getInfoMovie',
     async () => {
         const response = await selectedInfoMovie.getInfoMovie();
@@ -20,7 +20,7 @@ const infoMovieSlice = createSlice({
     initialState,
     reducers : {},
     extraReducers(builder){
-        builder.addCase(infoMovieThunk.fulfilled,(state,action) => {
+        builder.addCase(infoMovieThunk.fulfilled,(state,action : PayloadAction<IMovieInfo>) => {
             state.infoMovie = action.payload
         })
     }

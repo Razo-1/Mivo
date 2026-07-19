@@ -18,5 +18,5 @@ export interface IMovie {
 }
 
 export interface IListState<T> {
-    item: T[];
+    results: T[];
 }
