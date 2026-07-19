@@ -1,22 +1,22 @@
 import { useEffect } from "react";
-import type { AppDispatch, RootState } from "../../../../App/Store";
-import { useDispatch, useSelector } from "react-redux";
 import { movieThunk } from "../../../../Entities/Movie/model";
 import { CinematicFade } from "../../../../Shared/ui/cinematic-fade";
 import "./style/Trailer.css";
 import { Info } from "../../../../Widgets/FilmInfoTable";
 import { Movies } from "../../../../Widgets/TrandMovies";
+import { useAppDispatch, useAppSelector } from "../../../../App/Hooks";
 
 function Trailer() {
 
-  const { results } = useSelector((state: RootState) => state.movieData);
-  const dispatch = useDispatch<AppDispatch>();
+  const { results } = useAppSelector(state => state.movieData)
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(movieThunk());
   }, [dispatch]);
 
   const videoKey = results[0]?.key;  
+  console.log(videoKey);
   
   return (
     <div>

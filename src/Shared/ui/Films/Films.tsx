@@ -92,11 +92,11 @@ function Films({ release,text } : any){
  
             <CardContent sx={{ pt: 2, pb: 2, px: 1 }}>
               <Typography variant="body2" sx={{ color: '#fff', fontWeight: '600', mb: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                {item.title}
+                {item.title || item.name}
               </Typography>
               <Stack direction="row" spacing={1}>
                 <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-                  {item.release_date.split("-")[0]}
+                  {item.release_date ? item.release_date.split("-")[0] : item.first_air_date.split("-")[0]}
                 </Typography>
                 {/* <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>
                   · {item.genre}

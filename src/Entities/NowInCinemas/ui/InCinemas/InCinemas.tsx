@@ -1,14 +1,13 @@
 import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import type { AppDispatch, RootState } from "../../../../App/Store"
 import { cinamntThunk } from "../../model";
 import { Films } from "../../../../Shared/ui/Films/Films";
+import { useAppDispatch, useAppSelector } from "../../../../App/Hooks";
 
 
 function InCinemas(){
     
-    const { item } = useSelector((state : RootState) => state.cinemasData);
-    const dispatch = useDispatch<AppDispatch>();
+    const { item } = useAppSelector(state => state.cinemasData)
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
         dispatch(cinamntThunk());

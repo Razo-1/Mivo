@@ -6,6 +6,7 @@ import relseSlice from '../../Entities/NewReleases/model';
 import actorSlice from '../../Entities/PopularActors/model';
 import cinemasSlice from '../../Entities/NowInCinemas/model';
 import watchSlice from '../../Entities/NowWatching/model';
+import { showSlice } from "../../Entities/tvShow";
 
 const store = configureStore({
     reducer : {
@@ -16,6 +17,7 @@ const store = configureStore({
         actorsData : actorSlice,
         cinemasData : cinemasSlice,
         watchData : watchSlice,
+        showData : showSlice,
     }
 })
 

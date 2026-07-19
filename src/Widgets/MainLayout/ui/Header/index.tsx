@@ -17,6 +17,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 // import { movieThunk } from '../../../../Entities/Movie/model';
 import { infoMovieThunk } from "../../../../Entities/InfoMovie/model";
+import { NavLink } from "react-router-dom";
 
 const nav = ["Movies", "TV Shows", "People", "Awards", "News"];
 
@@ -99,6 +100,8 @@ export default function Header() {
       {nav.map((item) => (
         <Typography
           key={item}
+          component={NavLink}
+          to={`/${item}`}
           sx={{
             color: "#9b9b9b",
             fontWeight: 500,
@@ -108,6 +111,7 @@ export default function Header() {
             "&:hover": {
               color: "#fff",
             },
+            textDecoration : 'none'
           }}
         >
           {item}

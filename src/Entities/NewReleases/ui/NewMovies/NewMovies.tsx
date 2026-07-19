@@ -1,10 +1,9 @@
-import { useSelector } from 'react-redux';
-import type { RootState } from '../../../../App/Store';
 import { Films } from '../../../../Shared/ui/Films/Films';
+import { useAppSelector } from '../../../../App/Hooks';
 
 function NewMovies({  }){
     
-    const { item } = useSelector((state: RootState) => state.releaseData);
+    const { item } = useAppSelector(state => state.releaseData)
     
     return(
         <>

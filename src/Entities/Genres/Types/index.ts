@@ -4,7 +4,8 @@ interface IDat {
 }
 
 interface GenresState  {
-    geners : IDat[],
+    genres : Array<IDat>
 }
+
 
 export type { IDat,GenresState }

@@ -7,17 +7,14 @@ import {
   Container
 } from "@mui/material";
 import { FavoriteBorder } from "@mui/icons-material";
-import { useDispatch, useSelector } from "react-redux";
 
 import { actorThunk } from "../../model";
-import type { AppDispatch, RootState } from "../../../../App/Store";
+import { useAppDispatch, useAppSelector } from "../../../../App/Hooks";
 
 function Actors() {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
 
-  const { actors } = useSelector(
-    (state: RootState) => state.actorsData
-  );
+  const { actors } = useAppSelector(state => state.actorsData)
 
   useEffect(() => {
     dispatch(actorThunk());

@@ -1,14 +1,13 @@
-import { useDispatch, useSelector } from "react-redux";
 import { watchThunk } from "../../model";
 import { Box, Typography } from '@mui/material';
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
-import type { AppDispatch, RootState } from "../../../../App/Store";
 import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../../../App/Hooks";
 
 function Watch(){
 
-    const { item } = useSelector((state : RootState) => state.watchData);
-    const dispatch = useDispatch<AppDispatch>();
+    const { item } = useAppSelector(state => state.watchData);
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         dispatch(watchThunk())
@@ -16,11 +15,22 @@ function Watch(){
 
     return (
     <Box sx={{ maxWidth: 1450, mx: 'auto', px: 2, py: 4 }}>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
-        <Typography variant="h5" sx={{ fontWeight: 700, color: 'white' }}>
-            <MilitaryTechIcon sx={{color: '#ffb300', fontSize : '25px'}}/> Top Rated All Time
-        </Typography>
-      </Box>
+      <Box sx={{ mb: 4, display: "flex", alignItems: "center", gap: 1.5 }}>
+          <MilitaryTechIcon sx={{ fontSize: "2rem", color: "#ffb300" }} />
+          <Box 
+            sx={{ 
+              fontSize: "1.5rem", 
+              fontWeight: 700, 
+              letterSpacing: 0.5,
+              fontFamily: '"Georgia", serif',
+              background: 'white',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
+            Top Rated All Time
+          </Box>
+        </Box>
 
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
         {item.slice(0,10).map((movie, idx) => (
