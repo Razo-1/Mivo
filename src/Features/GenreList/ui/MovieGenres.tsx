@@ -14,6 +14,7 @@ function MovieGenres(){
 
     const [activeGenre, setActiveGenre] = useState<number | null>(null);
     const { genres } = useAppSelector(state => state.generesData);
+    const { genreId } = useAppSelector(state => state.genFilmsData);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -28,10 +29,14 @@ function MovieGenres(){
     }
     
     let handleAll = () => {
-      setActiveGenre(null)
       dispatch(cleaningData())
       dispatch(cleaning())
     }
+    useEffect(() => {
+      if(!genreId){
+        setActiveGenre(null)
+      }
+    },[genreId])
 
     return (
     <Box sx={{ width: '100%', maxWidth: 800, margin: '0 auto', mb: 3, mt : 3}}>
@@ -44,8 +49,8 @@ function MovieGenres(){
         
         <Box sx={{ display: 'flex', gap: 1 }}>
           <ButtonGroup size="small" sx={{ bgcolor: 'rgba(255,255,255,0.05)', borderRadius: 1 }}>
-            <Button sx={{ color: '#ffc107', borderColor: 'transparent' }}><GridViewIcon fontSize="small" /></Button>
-            <Button sx={{ color: 'rgba(255,255,255,0.3)', borderColor: 'transparent' }}><ViewListIcon fontSize="small" /></Button>
+            <Button sx={{ color: '#ffc107', borderColor: 'transparent' }}><ViewListIcon fontSize="small" /></Button>
+            <Button sx={{ color: 'rgba(255,255,255,0.3)', borderColor: 'transparent' }}><GridViewIcon fontSize="small" /></Button>
           </ButtonGroup>
           
           <Button size="small" sx={{ color: '#fff', bgcolor: 'rgba(255,255,255,0.05)', textTransform: 'none', px: 2 }}>

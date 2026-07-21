@@ -1,18 +1,18 @@
 import { createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
+import type { IShowState, ITVResponse } from "../types";
 import { show } from "../tvShowAPI";
-import type { IShowState, ITV } from "../types";
 
-export const showThunk = createAsyncThunk<Array<ITV>>(
+export const showThunk = createAsyncThunk<ITVResponse,number>(
     'getShow',
-    async () => {
-        const response = await show.getShow();
-        return response.data.results
+    async (page) => {
+        const response = await show.getShow(page);
+        return response.data
     }
 )
 
 const initialState : IShowState = {
     show : [],
+    total_pages : 0,
 }
 
 const showSlice = createSlice({
@@ -20,8 +20,9 @@ const showSlice = createSlice({
     initialState,
     reducers : {},
     extraReducers(builder){
-        builder.addCase(showThunk.fulfilled,(state,action : PayloadAction<Array<ITV>>) =>{
-            state.show = action.payload
+        builder.addCase(showThunk.fulfilled,(state,action) =>{
+            state.show = action.payload.results,
+            state.total_pages = action.payload.total_pages
         })
     }
 })

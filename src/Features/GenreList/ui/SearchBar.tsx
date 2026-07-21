@@ -4,6 +4,7 @@ import { useState, type ChangeEvent } from "react";
 import { useAppDispatch } from "../../../App/Hooks";
 import { changQuery, findThunk } from "../../../Entities/MovieFinder";
 import { cleaningData } from "../../../Entities/GenreFilms/model";
+import { cleaning } from "../../../Entities/MovieFinder/model";
 
 
 function SearchBar(){
@@ -21,6 +22,7 @@ function SearchBar(){
         if(search.trim()){
             let parms = {query : search , page : 1}
             dispatch(cleaningData())
+            dispatch(cleaning())
             dispatch(changQuery(search))
             dispatch(findThunk(parms))
             setSearch('')

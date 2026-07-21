@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "../../Widgets/MainLayout/ui";
 import { Trailer } from "../../Pages/FreshMovie/ui/Trailer/Trailer";
 import { MovieViewPage } from "../../Pages/MoviesPage/ui";
+import { Show } from "../../Pages";
 
 const router = createBrowserRouter([
     {
@@ -15,7 +16,12 @@ const router = createBrowserRouter([
             {
                 path : '/Movies',
                 element : <MovieViewPage/>
+            },
+            {
+                path : 'TV Shows',
+                element : <Show/>
             }
+
         ]
     }
 ])

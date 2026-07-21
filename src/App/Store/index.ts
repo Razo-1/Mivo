@@ -11,6 +11,7 @@ import { findSlice } from "../../Entities/MovieFinder";
 import { genFilmSlice } from "../../Entities/GenreFilms";
 import { screenSlice } from "../../Entities/OpenScreen";
 import { MainMovieSlice } from "../../Entities/MainMovie";
+import { mediaGenSlice } from "../../Entities/mediaGenres";
 
 const store = configureStore({
     reducer : {
@@ -26,6 +27,7 @@ const store = configureStore({
         genFilmsData : genFilmSlice,
         screenChang : screenSlice,
         mainMovData : MainMovieSlice,
+        mediaGenData : mediaGenSlice,
     }
 })
 

@@ -3,7 +3,7 @@ import { selectMainMovie } from "../MainMoveAPI";
 import type { IMovieVideoResponse } from "../types";
 
 export const MainMovieThunk = createAsyncThunk<IMovieVideoResponse,number>(
-    'getMovie',
+    'getMainMovie',
     async (filmId) => {
        const movie = await selectMainMovie.getMovi(filmId)
        return movie.data
@@ -15,7 +15,7 @@ const initialState: IMovieVideoResponse = {
     results: []
 }
 const MainMovieSlice = createSlice({
-    name : 'getMovie',
+    name : 'getMainMovie',
     initialState,
     reducers : {},
     extraReducers(builder){

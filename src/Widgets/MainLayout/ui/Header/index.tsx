@@ -15,7 +15,6 @@ import PersonIcon from "@mui/icons-material/Person";
 import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-// import { movieThunk } from '../../../../Entities/Movie/model';
 import { infoMovieThunk } from "../../../../Entities/InfoMovie/model";
 import { NavLink } from "react-router-dom";
 
@@ -36,6 +35,7 @@ export default function Header() {
   sx={{
     bgcolor: "#0d0d10",
     borderBottom: "1px solid #1a1a1d",
+    zIndex : '999'
   }}
 >
   <Toolbar
@@ -50,11 +50,14 @@ export default function Header() {
     {/* Logo */}
 
     <Box
+        component={NavLink}
+        to={'/'}
       sx={{
         display: "flex",
         alignItems: "center",
         gap: 1,
         cursor: "pointer",
+        textDecoration : 'none'
       }}
     >
       <Box

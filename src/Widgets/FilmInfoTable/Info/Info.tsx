@@ -35,7 +35,6 @@ function Info(){
         // right: 0,
         // top : '100px',
         // zIndex: 5,
-        margin : '0 auto'
       }}
     >
 
@@ -179,7 +178,7 @@ function Info(){
                 fontWeight:600
               }}
             >
-              Watch Trailer
+              Watch
             </Button>
 
 

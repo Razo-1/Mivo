@@ -2,7 +2,7 @@ import { ApiConfige } from "../../../Shared/ApiConfige";
 import type { IMovieVideoResponse } from "../Types";
 
 class MoviAPI extends ApiConfige {
-    async getMovi(filmId : number = 1368337){
+    async getMovi(filmId : number){
         return await this.getApi().get<IMovieVideoResponse>(`/movie/${filmId}/videos`)
     }
 }

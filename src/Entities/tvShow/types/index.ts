@@ -24,4 +24,5 @@ export interface ITVResponse {
 
 export interface IShowState {
   show: ITV[];
+  total_pages: number;
 }

@@ -15,19 +15,19 @@ function MainTrailer(){
   const [videoKey,setVideoKey] = useState<string | undefined>()
 
     useEffect(() => {
-    dispatch(MainMovieThunk(1368337));
+    dispatch(MainMovieThunk(1280738));
     }, [dispatch]);
 
     useEffect(() => {
         if(results.length){
             setVideoKey(searchTrailer(results));
         }
-    })
+    }, [results])
 
     if(!videoKey) return null
 
-
-
+    console.log(videoKey);
+    
     return(
         <>
             <iframe
