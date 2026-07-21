@@ -3,7 +3,7 @@ import { useAppSelector } from '../../../../App/Hooks';
 
 function NewMovies({  }){
     
-    const { results } = useAppSelector(state => state.releaseData)
+    const { results,total_pages } = useAppSelector(state => state.releaseData)
     
     return(
         <>

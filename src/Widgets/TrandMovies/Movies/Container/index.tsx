@@ -12,7 +12,7 @@ function Connection(){
     let dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
-        dispatch(relseThunk())
+        dispatch(relseThunk(1))
     },[dispatch])
 
      return (

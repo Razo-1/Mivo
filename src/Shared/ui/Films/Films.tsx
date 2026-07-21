@@ -1,6 +1,6 @@
 import { Box, Card, CardMedia, CardContent, Typography, Button, Stack, Link, Container } from '@mui/material';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import MovingIcon from '@mui/icons-material/Moving';
+import { ModelButton } from '../../../Features/homeList';
 
 function Films({ release,text } : any){
 
@@ -65,29 +65,7 @@ function Films({ release,text } : any){
 >
               <CardMedia component="img" height="260" image={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt={item.title} sx={{ objectFit: 'cover', borderRadius: '8px 8px 0 0' }} />
 
-  <Button
-    className="trailer-btn"
-    variant="contained"
-    startIcon={<PlayArrowIcon />}
-    sx={{
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      borderRadius: "30px",
-      bgcolor: "#ffc107",
-      color: "#000",
-      opacity: 0,
-      visibility: "hidden",
-      transition: ".3s",
-      zIndex: 2,
-      "&:hover": {
-        bgcolor: "#ffb300",
-      },
-    }}
-  >
-    Trailer
-  </Button>
+      <ModelButton trailerID={item.id}/>
 </Box>
  
             <CardContent sx={{ pt: 2, pb: 2, px: 1 }}>

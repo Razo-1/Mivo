@@ -7,6 +7,10 @@ import actorSlice from '../../Entities/PopularActors/model';
 import cinemasSlice from '../../Entities/NowInCinemas/model';
 import watchSlice from '../../Entities/NowWatching/model';
 import { showSlice } from "../../Entities/tvShow";
+import { findSlice } from "../../Entities/MovieFinder";
+import { genFilmSlice } from "../../Entities/GenreFilms";
+import { screenSlice } from "../../Entities/OpenScreen";
+import { MainMovieSlice } from "../../Entities/MainMovie";
 
 const store = configureStore({
     reducer : {
@@ -18,6 +22,10 @@ const store = configureStore({
         cinemasData : cinemasSlice,
         watchData : watchSlice,
         showData : showSlice,
+        findData : findSlice,
+        genFilmsData : genFilmSlice,
+        screenChang : screenSlice,
+        mainMovData : MainMovieSlice,
     }
 })
 

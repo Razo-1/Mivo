@@ -4,6 +4,8 @@ import { useAppDispatch, useAppSelector } from "../../../App/Hooks";
 import { genersThunk } from "../../../Entities/Genres/model";
 import { getGenreColor } from "../lib/getGenreColor";
 import TheatersOutlinedIcon from '@mui/icons-material/TheatersOutlined';
+import { NavLink } from "react-router-dom";
+import { genFilmThunk } from "../../../Entities/GenreFilms/model";
 
 
 function Genres(){
@@ -15,6 +17,10 @@ function Genres(){
     useEffect(() => {
         dispatch(genersThunk())
     },[dispatch])
+
+    let choseMovie = (id : number) => {
+      dispatch(genFilmThunk({ genreId : id,page : 1 }))         
+    }
 
     return (
     <Box sx={{ backgroundColor: '#0b0c10', py: 4 }}>
@@ -42,6 +48,9 @@ function Genres(){
             
             return (
               <Button
+                component={NavLink}
+                to={'/Movies'}
+                onClick={() => choseMovie(genre.id)}
                 key={genre.id}
                 variant="outlined"
                 sx={{

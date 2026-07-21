@@ -18,5 +18,8 @@ export interface IMovie {
 }
 
 export interface IListState<T> {
+    page: number;
     results: T[];
+    total_pages: number;
+    total_results: number;
 }
