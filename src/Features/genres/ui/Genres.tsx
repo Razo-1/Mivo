@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import { Box, Button } from '@mui/material';
-import { useAppDispatch, useAppSelector } from "../../../App/Hooks";
-import { genersThunk } from "../../../Entities/Genres/model";
-import { getGenreColor } from "../lib/getGenreColor";
-import TheatersOutlinedIcon from '@mui/icons-material/TheatersOutlined';
 import { NavLink } from "react-router-dom";
-import { genFilmThunk } from "../../../Entities/GenreFilms/model";
+import { useAppDispatch, useAppSelector } from "../../../App/Hooks";
+import { Box, Button } from '@mui/material';
+import TheatersOutlinedIcon from '@mui/icons-material/TheatersOutlined';
+import { genersThunk } from "../../../Entities/Genres";
+import { getGenreColor } from "../lib/getGenreColor";
+import { genFilmThunk } from "../../../Entities/GenreFilms";
 
 
 function Genres(){

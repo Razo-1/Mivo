@@ -1,12 +1,12 @@
+import { useEffect, useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../../../App/Hooks';
 import { Box, Typography, Chip,ButtonGroup, Button } from '@mui/material';
 import GridViewIcon from '@mui/icons-material/GridView';
 import ViewListIcon from '@mui/icons-material/ViewList';
-import { useAppDispatch, useAppSelector } from '../../../App/Hooks';
-import { useEffect, useState } from 'react';
-import { genersThunk } from '../../../Entities/Genres/model';
 import { SearchBar } from './SearchBar';
-import { cleaningData, genFilmThunk } from '../../../Entities/GenreFilms/model';
-import { cleaning } from '../../../Entities/MovieFinder/model';
+import { genersThunk } from '../../../Entities/Genres'; 
+import { cleaning } from '../../../Entities/MovieFinder'; 
+import { genFilmThunk,cleaningData } from '../../../Entities/GenreFilms'; 
 
 
 

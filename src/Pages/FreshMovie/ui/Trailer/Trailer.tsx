@@ -1,14 +1,11 @@
-import { CinematicFade } from "../../../../Shared/ui/cinematic-fade";
+import { CinematicFade } from "../../../../Shared/ui";
 import { Info } from "../../../../Widgets/FilmInfoTable";
 import { Movies } from "../../../../Widgets/TrandMovies";
 import { TrailerModal } from "../../../../Features/GenreList/ui";
-import "./style/Trailer.css";
 import { MainTrailer } from "../../../../Features/homeList/ui";
+import "./style/Trailer.css";
 
 function Trailer() {
-
-  
-
   
   return (
     <div>

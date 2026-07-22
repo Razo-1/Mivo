@@ -1,9 +1,9 @@
 import { ApiConfige } from "../../../Shared/ApiConfige";
-import type { IFind } from "../types";
+import type { IListState, IMovie } from "../../../Shared/Types";
 
 class MovieFinderAPI extends ApiConfige {
     async getFindMovie(query : string,page : number){
-        return await this.getApi().get<IFind>(`/search/movie?query=${query}&page=${page}`)
+        return await this.getApi().get<IListState<IMovie>>(`/search/movie?query=${query}&page=${page}`)
     }
 }
 

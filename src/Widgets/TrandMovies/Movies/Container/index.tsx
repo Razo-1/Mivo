@@ -1,10 +1,11 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Box, Container } from "@mui/material";
 import { Genres } from "../../../../Features/genres";
-import { useDispatch } from "react-redux";
+import { relseThunk } from "../../../../Entities/NewReleases";
+import { MovieList } from "../../../../Entities/NowWatching";
 import type { AppDispatch } from "../../../../App/Store";
-import { useEffect } from "react";
-import { relseThunk } from "../../../../Entities/NewReleases/model";
-import { Watch } from "../../../../Entities/NowWatching/ui/Watch/Watch";
+
 
 
 function Connection(){
@@ -25,7 +26,7 @@ function Connection(){
         }}
       >
         <Box sx={{ flex: 1.7 }}>
-          <Watch />
+          <MovieList />
         </Box>
 
         <Box sx={{ flex: 1, maxWidth: { md: '440px' }, width: '100%' }}>

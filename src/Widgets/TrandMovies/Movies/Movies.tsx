@@ -1,9 +1,9 @@
 import { NewMovies } from "../../../Entities/NewReleases";
 import { Actors } from "../../../Entities/PopularActors";
-import { InCinemas } from "../../../Entities/NowInCinemas/ui/InCinemas/InCinemas";
+import { InCinemas } from "../../../Entities/NowInCinemas";
 import { Connection } from "./Container";
-import './Style/Movies.css';
 import { Show } from "../../../Entities/tvShow";
+import './Style/Movies.css';
 
 function Movies(){
     

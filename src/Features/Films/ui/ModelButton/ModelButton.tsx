@@ -1,13 +1,14 @@
 import { Button } from "@mui/material";
-import { useAppDispatch, useAppSelector } from "../../../App/Hooks"
-import { movieThunk } from "../../../Entities/Movie/model";
-import { openScreen } from "../../../Entities/OpenScreen";
+import { useAppDispatch } from "../../../../App/Hooks"; 
+import { movieThunk } from "../../../../Entities/Movie"; 
+import { openScreen } from "../../../../Entities/OpenScreen";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import { searchTrailer } from "../lib"; 
+import { searchTrailer } from "../../../../Shared/lib"; 
+import type { IFilmId } from "../../types";
 
 
 
-function ModelButton({trailerID} : any){
+function ModelButton({trailerID} : IFilmId){
 
     const dispatch = useAppDispatch();
 
@@ -25,7 +26,6 @@ function ModelButton({trailerID} : any){
     console.log(error);
   }
 }
-
 
 return(
     <>

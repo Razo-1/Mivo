@@ -1,3 +1,3 @@
-import { ModelButton } from "./ui";
+import { MainTrailer,  } from "./ui"
 
-export { ModelButton }  
+export { MainTrailer }

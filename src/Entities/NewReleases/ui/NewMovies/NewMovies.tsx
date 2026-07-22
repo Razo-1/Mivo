@@ -1,13 +1,13 @@
-import { Films } from '../../../../Shared/ui/Films/Films';
+import { MediaSection } from '../../../../Features/Films'; 
 import { useAppSelector } from '../../../../App/Hooks';
 
-function NewMovies({  }){
+function NewMovies(){
     
     const { results } = useAppSelector(state => state.releaseData)
     
     return(
         <>
-          <Films release={results} text={'Trending Now'}/>
+          <MediaSection results={results} text={'Trending Now'}/>
         </>
       
     )

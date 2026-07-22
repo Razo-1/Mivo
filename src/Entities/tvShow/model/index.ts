@@ -1,8 +1,9 @@
 import { createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import type { IShowState, ITVResponse } from "../types";
 import { show } from "../tvShowAPI";
+import type { IShowState } from "../types";
+import type { IListState, ITvShow } from "../../../Shared/Types";
 
-export const showThunk = createAsyncThunk<ITVResponse,number>(
+export const showThunk = createAsyncThunk<IListState<ITvShow>,number>(
     'getShow',
     async (page) => {
         const response = await show.getShow(page);

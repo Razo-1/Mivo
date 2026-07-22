@@ -5,7 +5,6 @@ import {
   Typography,
   Card,
   IconButton,
-  Button,
 } from '@mui/material';
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import StarIcon from '@mui/icons-material/Star';

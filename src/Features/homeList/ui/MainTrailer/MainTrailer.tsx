@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import { MainMovieThunk } from "../../../Entities/MainMovie";
-import { useAppDispatch, useAppSelector } from "../../../App/Hooks";
-import { searchTrailer } from "../lib";
-
-
+import { useAppDispatch, useAppSelector } from "../../../../App/Hooks";
+import { MainMovieThunk } from "../../../../Entities/MainMovie";
+import { searchTrailer } from "../../../../Shared/lib";
 
 
 function MainTrailer(){
@@ -26,7 +24,6 @@ function MainTrailer(){
 
     if(!videoKey) return null
 
-    console.log(videoKey);
     
     return(
         <>

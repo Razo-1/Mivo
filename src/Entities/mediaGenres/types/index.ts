@@ -10,10 +10,3 @@ export interface IGenreFilmState {
   total_Gen_pages: number | null;
   genId: number | null;
 }
-
-export interface IGenreFilmResponse {
-  page: number;
-  results: IMovie[];
-  total_pages: number;
-  total_results: number;
-}

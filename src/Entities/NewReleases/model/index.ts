@@ -1,4 +1,4 @@
-import { createAsyncThunk,createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk,createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { reals } from "../ReleasesAPI";
 import type { IListState,IMovie } from "../../../Shared/Types";
 
@@ -21,14 +21,16 @@ const relseSlice = createSlice({
     name : 'getRelease',
     initialState,
     reducers : {
-        changPage(state,action){
+        changPage(state,action : PayloadAction<number>){
             state.total_pages = action.payload
         }
     },
     extraReducers(builder){
         builder.addCase(relseThunk.fulfilled,(state,action) => {
-            state.results = action.payload.results
-            state.total_pages = action.payload.total_pages
+            state.page = action.payload.page,
+            state.results = action.payload.results,
+            state.total_pages = action.payload.total_pages,
+            state.total_results = action.payload.total_results
         })
     }
 })

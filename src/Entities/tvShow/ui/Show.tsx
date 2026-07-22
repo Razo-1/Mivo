@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../App/Hooks";
 import { showThunk } from "../model";
-import { Films } from "../../../Shared/ui/Films/Films";
+import { MediaSection } from "../../../Features/Films"; 
 
 
 function Show(){
@@ -10,14 +10,14 @@ function Show(){
       const { show } = useAppSelector(state => state.showData);
         
       useEffect(() => {
-        dispatch(showThunk())
+        dispatch(showThunk(1))
       },[dispatch])
 
-      let release = show
-    
+      let results = show
+      
     return(
         <>
-            <Films release={release} text={'Popular on TV'}/>
+            <MediaSection results={results} text={'Popular on TV'}/>
         </>
     )
 

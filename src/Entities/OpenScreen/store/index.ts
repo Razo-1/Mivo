@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import type { IScreen } from "../types";
 
-const initialState = {
+const initialState : IScreen = {
     open : false,
     key : null
 }
-
 
 let screenSlice = createSlice({
     name : 'OpenScreen',

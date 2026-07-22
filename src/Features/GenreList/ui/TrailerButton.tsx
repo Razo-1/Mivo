@@ -1,8 +1,8 @@
+import { useAppDispatch } from "../../../App/Hooks"
 import { Button } from "@mui/material";
-import { useAppDispatch, useAppSelector } from "../../../App/Hooks"
-import { movieThunk } from "../../../Entities/Movie/model";
-import { openScreen } from "../../../Entities/OpenScreen";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import { movieThunk } from "../../../Entities/Movie";
+import { openScreen } from "../../../Entities/OpenScreen";
 import { searchTrailer } from "../lib";
 
 
@@ -14,7 +14,8 @@ function TrailerButton({trailerID} : any){
     let watchTrailer = async () => {
   try {
     const data = await dispatch(movieThunk(trailerID)).unwrap();
-
+    console.log(data);
+    
     const key = searchTrailer(data.results);
 
     if(key){

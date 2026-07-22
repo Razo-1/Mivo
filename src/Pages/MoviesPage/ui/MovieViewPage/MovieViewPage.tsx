@@ -1,8 +1,8 @@
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../../../App/Hooks'
 import { MovieGenres, TrailerModal } from "../../../../Features/GenreList/ui";
 import { FilmCard } from "../../../../Widgets/FilmCard/ui";
-import { useAppDispatch, useAppSelector } from '../../../../App/Hooks'
-import { useEffect } from 'react';
-import { relseThunk } from '../../../../Entities/NewReleases/model'
+import { relseThunk } from '../../../../Entities/NewReleases'
 
 
 function MovieViewPage(){

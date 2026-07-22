@@ -1,5 +1,5 @@
 import { createSlice,createAsyncThunk, type PayloadAction } from "@reduxjs/toolkit";
-import type { IListState,IMovie } from "../../../Shared/Types";
+import type { IMovie, IResult } from "../../../Shared/Types";
 import { watch } from "../watchingAPI";
 
 export const watchThunk = createAsyncThunk<Array<IMovie>>(
@@ -10,8 +10,7 @@ export const watchThunk = createAsyncThunk<Array<IMovie>>(
     }
 )
 
-
-const initialState : IListState<IMovie> = {
+const initialState : IResult= {
     results : []
 }
 

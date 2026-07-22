@@ -1,3 +1,3 @@
-import findSlice, { changQuery, findThunk } from './model'
+import findSlice, { changQuery, findThunk,cleaning } from './model'
 
-export { findSlice,findThunk,changQuery }
+export { findSlice,findThunk,changQuery,cleaning }

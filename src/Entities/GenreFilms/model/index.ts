@@ -1,13 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { genFilm } from "../GenreFilmsAPI";
-import type { IGenreFilmParams, IGenreFilmResponse, IGenreFilmState } from "../types";
+import type { IGenreFilmParams, IGenreFilmState } from "../types";
+import type { IListState, IMovie } from "../../../Shared/Types";
 
 
 
-export const genFilmThunk = createAsyncThunk<
-  IGenreFilmResponse,
-  IGenreFilmParams
->(
+export const genFilmThunk = createAsyncThunk<IListState<IMovie>,IGenreFilmParams>(
   "getGenFilm",
   async ({ genreId, page }) => {
     const response = await genFilm.getGenFilm(genreId, page);

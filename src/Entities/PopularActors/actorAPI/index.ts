@@ -1,9 +1,10 @@
 import { ApiConfige } from "../../../Shared/ApiConfige";
-import type { IPersonResponse } from "../types";
+import type { IListState } from "../../../Shared/Types";
+
 
 class ActorAPI extends ApiConfige {
     async getActor(){
-        return await this.getApi().get<IPersonResponse>(`/person/popular?page=10`)
+        return await this.getApi().get<IListState>(`/person/popular?page=10`)
     }
 }
 

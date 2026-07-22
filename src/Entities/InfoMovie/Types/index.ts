@@ -1,13 +1,10 @@
+import type { IGenre } from "../../../Shared/Types";
+
 export interface ICollection {
   id: number;
   name: string;
   poster_path: string | null;
   backdrop_path: string | null;
-}
-
-export interface IGenre {
-  id: number;
-  name: string;
 }
 
 export interface IProductionCompany {

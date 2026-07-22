@@ -1,9 +1,9 @@
-import { Box, Pagination } from '@mui/material';
-import { useAppDispatch, useAppSelector } from '../../../App/Hooks';
 import { useEffect, useState, type ChangeEvent } from 'react';
+import { useAppDispatch, useAppSelector } from '../../../App/Hooks';
+import { Box, Pagination } from '@mui/material';
 import { findThunk } from '../../../Entities/MovieFinder';
-import { relseThunk } from '../../../Entities/NewReleases/model';
-import { genFilmThunk } from '../../../Entities/GenreFilms/model';
+import { relseThunk } from '../../../Entities/NewReleases'; 
+import { genFilmThunk } from '../../../Entities/GenreFilms'; 
 
 
 function PaginationSnippet() {

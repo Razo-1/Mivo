@@ -1,9 +1,10 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 import { generAPI } from "../GenresApi";
-import type { GenresState, IDat } from "../Types";
+import type { GenresState } from "../../../Shared/Types"; 
 import type { PayloadAction } from "@reduxjs/toolkit";
+import type { IGenre } from "../../../Shared/Types";
 
-export const genersThunk = createAsyncThunk<Array<IDat>>(
+export const genersThunk = createAsyncThunk<Array<IGenre>>(
     'getGen',
     async () => {
         const response =  await generAPI.chooseGenres()
@@ -22,7 +23,7 @@ const genreSlice = createSlice({
 
     },
     extraReducers(builder){
-        builder.addCase(genersThunk.fulfilled,(state,action : PayloadAction<Array<IDat>>) => {
+        builder.addCase(genersThunk.fulfilled,(state,action : PayloadAction<Array<IGenre>>) => {
             state.genres = action.payload 
         })
     }

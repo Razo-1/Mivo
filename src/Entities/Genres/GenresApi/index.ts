@@ -1,5 +1,5 @@
 import { ApiConfige } from "../../../Shared/ApiConfige";
-import type { GenresState } from "../Types";
+import type { GenresState } from "../../../Shared/Types"; 
 
 class Genres extends ApiConfige{ 
     

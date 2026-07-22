@@ -1,6 +1,6 @@
 import { createSlice,createAsyncThunk, type PayloadAction } from "@reduxjs/toolkit";
-import { cinemas } from "../incCinemasAPI";
-import type { IListState,IMovie } from "../../../Shared/Types";
+import type { IMovie, IResult } from "../../../Shared/Types";
+import { cinemas } from "../inCinemasAPI";
 
 export const cinamntThunk = createAsyncThunk<Array<IMovie>>(
     'getCinemas',
@@ -10,7 +10,7 @@ export const cinamntThunk = createAsyncThunk<Array<IMovie>>(
     }
 )
 
-const initialState : IListState<IMovie>  = {
+const initialState : IResult  = {
     results : []
 }
 

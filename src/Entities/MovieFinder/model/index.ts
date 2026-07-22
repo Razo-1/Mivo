@@ -1,8 +1,9 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { finder } from "../MovieFinderAPI";
-import type { FindParams, FindState, IFind } from "../types";
+import type { FindParams, FindState } from "../types";
+import type { IListState, IMovie } from "../../../Shared/Types";
 
-export const findThunk = createAsyncThunk<IFind, FindParams>(
+export const findThunk = createAsyncThunk<IListState<IMovie>, FindParams>(
     'getFind',
     async ({ query,page }) => {
         const response = await finder.getFindMovie(query,page);
@@ -20,7 +21,7 @@ const findSlice = createSlice({
     name : 'getFind',
     initialState ,
     reducers : {
-        changQuery(state,action){
+        changQuery(state,action : PayloadAction<string> ){
             state.query = action.payload;
         },
         cleaning(state){

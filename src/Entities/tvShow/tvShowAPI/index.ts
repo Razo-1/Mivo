@@ -1,9 +1,9 @@
 import { ApiConfige } from "../../../Shared/ApiConfige";
-import type { ITVResponse } from "../types";
+import type { IListState, ITvShow } from "../../../Shared/Types";
 
 class TvShowAPI extends ApiConfige {
     async getShow(page : number = 3){
-        return await this.getApi().get<ITVResponse>(`/tv/popular?page=${page}`);
+        return await this.getApi().get<IListState<ITvShow>>(`/tv/popular?page=${page}`);
     }
 }
 

@@ -1,3 +1,4 @@
-import { NewMovies } from "./ui/NewMovies/NewMovies";
+import { NewMovies } from "./ui" 
+import relseSlice, { relseThunk } from './model'
 
-export { NewMovies }
+export { NewMovies,relseSlice,relseThunk }

@@ -1,3 +1,3 @@
-import genFilmSlice from './model';
+import genFilmSlice, { genFilmThunk,cleaningData } from './model';
 
-export { genFilmSlice }
+export { genFilmSlice,genFilmThunk,cleaningData }

@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { cinamntThunk } from "../../model";
-import { Films } from "../../../../Shared/ui/Films/Films";
+import { MediaSection } from '../../../../Features/Films'; 
 import { useAppDispatch, useAppSelector } from "../../../../App/Hooks";
 
 
@@ -12,12 +12,10 @@ function InCinemas(){
     useEffect(() => {
         dispatch(cinamntThunk());
     },[dispatch])
-
-    let release = results    
     
     return(
         <>
-            <Films release={release} text={'In Cinemas'}/>
+            <MediaSection results={results} text={'In Cinemas'}/>
         </>
     )
 }

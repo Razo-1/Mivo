@@ -19,7 +19,6 @@ function Show(){
         let a = {genId: 80, page: 1}
         dispatch(mediaGenThunk(a))
     },[dispatch])
-    console.log(data);
     
     return(
         <>

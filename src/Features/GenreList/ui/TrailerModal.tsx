@@ -11,7 +11,6 @@ function TrailerModal() {
         let handleClose = () => {
             dispatch(openScreen(null))
         }
-        console.log(open);
         
         return (
             <Dialog
