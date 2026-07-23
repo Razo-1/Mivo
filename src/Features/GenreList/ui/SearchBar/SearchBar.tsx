@@ -1,10 +1,10 @@
 import { useState, type ChangeEvent } from "react";
-import { useAppDispatch } from "../../../App/Hooks";
+import { useAppDispatch } from "../../../../App/Hooks";
 import { Box, InputAdornment, TextField } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
-import { changQuery, findThunk } from "../../../Entities/MovieFinder";
-import { cleaningData } from "../../../Entities/GenreFilms";
-import { cleaning } from "../../../Entities/MovieFinder";
+import { changQuery, findThunk } from "../../../../Entities/MovieFinder";
+import { cleaningData } from "../../../../Entities/GenreFilms";
+import { cleaning } from "../../../../Entities/MovieFinder";
 
 
 function SearchBar(){

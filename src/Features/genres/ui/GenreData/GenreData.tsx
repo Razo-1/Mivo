@@ -1,14 +1,14 @@
-import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../../App/Hooks";
-import { Box, Button } from '@mui/material';
-import TheatersOutlinedIcon from '@mui/icons-material/TheatersOutlined';
-import { genersThunk } from "../../../Entities/Genres";
-import { getGenreColor } from "../lib/getGenreColor";
-import { genFilmThunk } from "../../../Entities/GenreFilms";
+import { Box, Button } from "@mui/material";
+import { getGenreColor } from "../../lib/getGenreColor";
+import { useAppDispatch, useAppSelector } from "../../../../App/Hooks";
+import { useEffect } from "react";
+import { genersThunk } from "../../../../Entities/Genres";
+import { genFilmThunk } from "../../../../Entities/GenreFilms";
 
 
-function Genres(){
+
+function GenreData(){
 
     const  { genres } = useAppSelector(state => state.generesData);
     const dispatch = useAppDispatch();
@@ -22,26 +22,9 @@ function Genres(){
       dispatch(genFilmThunk({ genreId : id,page : 1 }))         
     }
 
-    return (
-    <Box sx={{ backgroundColor: '#0b0c10', py: 4 }}>
-      <Box sx={{ maxWidth: 1450, mx: "auto", px: 2 }}>
-        <Box sx={{ mb: 4, display: "flex", alignItems: "center", gap: 1.5 }}>
-          <TheatersOutlinedIcon sx={{ fontSize: "2rem", color: "#ffb300" }} />
-          <Box 
-            sx={{ 
-              fontSize: "1.5rem", 
-              fontWeight: 700, 
-              letterSpacing: 0.5,
-              fontFamily: '"Georgia", serif',
-              background: 'white',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}
-          >
-            Browse by Genre
-          </Box>
-        </Box>
-  
+
+
+    return(
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2 }}>
           {genres?.map((genre) => {
             const { borderColor, bgColor, textColor } = getGenreColor(genre.id);
@@ -79,10 +62,7 @@ function Genres(){
             );
           })}
         </Box>
-      </Box>
-    </Box>
-  );
-
+    )
 }
 
-export { Genres }
+export { GenreData }

@@ -1,6 +1,6 @@
 import { Dialog, DialogContent } from "@mui/material";
-import { useAppDispatch, useAppSelector } from "../../../App/Hooks";
-import { openScreen } from "../../../Entities/OpenScreen";
+import { useAppDispatch, useAppSelector } from "../../../../App/Hooks";
+import { openScreen } from "../../../../Entities/OpenScreen";
 
 
 

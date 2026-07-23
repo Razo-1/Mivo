@@ -1,9 +1,9 @@
 import { useEffect, useState, type ChangeEvent } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../App/Hooks';
+import { useAppDispatch, useAppSelector } from '../../../../App/Hooks';
 import { Box, Pagination } from '@mui/material';
-import { findThunk } from '../../../Entities/MovieFinder';
-import { relseThunk } from '../../../Entities/NewReleases'; 
-import { genFilmThunk } from '../../../Entities/GenreFilms'; 
+import { findThunk } from '../../../../Entities/MovieFinder';
+import { relseThunk } from '../../../../Entities/NewReleases'; 
+import { genFilmThunk } from '../../../../Entities/GenreFilms'; 
 
 
 function PaginationSnippet() {
@@ -31,7 +31,7 @@ function PaginationSnippet() {
 
 
   const handlePageChange = (
-    e: ChangeEvent<unknown>,
+    _: ChangeEvent<unknown>,
     value: number
   ) => {
 

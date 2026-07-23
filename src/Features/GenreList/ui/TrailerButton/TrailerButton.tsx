@@ -1,10 +1,9 @@
-import { useAppDispatch } from "../../../App/Hooks"
+import { useAppDispatch } from "../../../../App/Hooks"
 import { Button } from "@mui/material";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import { movieThunk } from "../../../Entities/Movie";
-import { openScreen } from "../../../Entities/OpenScreen";
-import { searchTrailer } from "../lib";
-
+import { movieThunk } from "../../../../Entities/Movie";
+import { openScreen } from "../../../../Entities/OpenScreen";
+import { searchTrailer } from "../../../../Shared/lib";
 
 
 function TrailerButton({trailerID} : any){

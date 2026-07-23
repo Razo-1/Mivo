@@ -1,3 +1,3 @@
-import { Genres } from "./ui/Genres";
+import { Genres } from "./ui"
 
 export { Genres }
