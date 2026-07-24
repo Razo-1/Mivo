@@ -1,31 +1,27 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../App/Hooks";
-import { MovieGenres } from "../../../Features/GenreList/ui";
-import { FilmCard } from "../../../Widgets/FilmCard/ui";
+import { ShowGenres } from "../../../Features/ShowGenre/ui";
+import { ShowCard } from "../../../Widgets/ShowCard/ui";
+import { TrailerModal } from "../../../Features/GenreList/ui";
 import { showThunk } from "../../../Entities/tvShow/model";
-import { mediaGenThunk } from "../../../Entities/mediaGenres";
 
-
-
-function Show(){
-
-    // const { show,total_pages } = useAppSelector(state => state.showData)
+function Show() {
+    const { show } = useAppSelector(state => state.showData);
+    const { find } = useAppSelector(state => state.findShowData);
     const { data } = useAppSelector(state => state.mediaGenData);
-
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        // dispatch(showThunk(1))
-        let a = {genId: 80, page: 1}
-        dispatch(mediaGenThunk(a))
-    },[dispatch])
-    
-    return(
+        dispatch(showThunk(1));
+    }, [dispatch]);
+
+    return (
         <>
-            <MovieGenres/>
-            {/* <FilmCard results={show}/> */}
+            <ShowGenres />
+            <ShowCard results={show} find={find} data={data} />
+            <TrailerModal />
         </>
-    )
+    );
 }
 
-export { Show }
+export { Show };

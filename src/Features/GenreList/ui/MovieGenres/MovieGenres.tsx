@@ -7,6 +7,7 @@ import { SearchBar } from '../SearchBar';
 import { genersThunk } from '../../../../Entities/Genres'; 
 import { cleaning } from '../../../../Entities/MovieFinder'; 
 import { genFilmThunk,cleaningData } from '../../../../Entities/GenreFilms'; 
+import { FindFilm } from '../../../../Shared/ui';
 
 
 
@@ -110,7 +111,7 @@ function MovieGenres(){
       </Box>
 
       {/* Поиск */}
-        <SearchBar/>
+        <FindFilm/>
     </Box>
   );
 }

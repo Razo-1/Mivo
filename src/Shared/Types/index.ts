@@ -80,3 +80,9 @@ export interface GenresState  {
 export interface ISectionHeaderText {
     text : string
 }
+
+
+export interface FindShowParams {
+    query: string;
+    page: number;
+}

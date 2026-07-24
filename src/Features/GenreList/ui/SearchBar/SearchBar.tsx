@@ -1,21 +1,19 @@
 import { useState, type ChangeEvent } from "react";
 import { useAppDispatch } from "../../../../App/Hooks";
-import { Box, InputAdornment, TextField } from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
 import { changQuery, findThunk } from "../../../../Entities/MovieFinder";
 import { cleaningData } from "../../../../Entities/GenreFilms";
 import { cleaning } from "../../../../Entities/MovieFinder";
+import { FindFilm } from "../../../../Shared/ui";
 
 
 function SearchBar(){
 
-    let [search,setSearch] = useState<string>('');
     const dispatch = useAppDispatch();
+    let [search,setSearch] = useState<string>('');
 
     let handleChangText = (e : ChangeEvent<HTMLInputElement>) => {
             setSearch(e.target.value);
     }
-
 
     let getFilm = (e : ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -31,31 +29,7 @@ function SearchBar(){
     
     return(
         <>
-            <Box component="form" onSubmit={getFilm}>
-                <TextField
-                    fullWidth
-                    onChange={handleChangText}
-                    value={search}
-                    placeholder="Filter by title or director..."
-                    slotProps={{
-                    input: {
-                        startAdornment: (
-                        <InputAdornment position="start">
-                            <SearchIcon sx={{ color: 'rgba(255,255,255,0.3)' }} />
-                        </InputAdornment>
-                        ),
-                    }
-                    }}
-                    sx={{
-                    '& .MuiOutlinedInput-root': {
-                        bgcolor: 'rgba(255,255,255,0.05)',
-                        borderRadius: 2,
-                        color: '#fff',
-                        '& fieldset': { border: 'none' }
-                    }
-                    }}
-                />
-            </Box>
+            <FindFilm getFilm={getFilm} handleChangText={handleChangText} search={search}/>
         </>
     )
 }

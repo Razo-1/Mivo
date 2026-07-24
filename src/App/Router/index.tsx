@@ -6,24 +6,31 @@ import { Show } from "../../Pages";
 
 const router = createBrowserRouter([
     {
-        path : '/',
-        element : <Layout/>,
-        children : [
+        path: '/',
+        element: <Layout />,
+        children: [
             {
-                index : true,
-                element : <Trailer/>
+                index: true,
+                element: <Trailer />
             },
             {
-                path : '/Movies',
-                element : <MovieViewPage/>
+                path: '/Movies',
+                element: <MovieViewPage />
             },
             {
-                path : 'TV Shows',
-                element : <Show/>
+                path: 'TV Shows',
+                element: <Show />
+            },
+            {
+                path: 'TV%20Shows',
+                element: <Show />
+            },
+            {
+                path: 'tv-shows',
+                element: <Show />
             }
-
         ]
     }
-])
+]);
 
-export { router }
+export { router };
